@@ -1,5 +1,11 @@
-@import "tailwindcss";
+{/*@import "tailwindcss";
 
 @tailwind utilities;
 @config "../tailwind.config.mjs" 
 
+@import "tailwindcss/components";
+*/}
+
+@import "tailwindcss/preflight";
+
+@import "tailwindcss/utilities";
