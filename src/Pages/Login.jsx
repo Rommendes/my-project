@@ -34,9 +34,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
-      <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-primary">Login</h2>
+    <div className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
+      <div className="bg-white p-6 sm:p-8  w-full max-w-md">
+        <h2 className="text-2xl font-bold text-center text-primary uppercase">Login</h2>
 
         <form onSubmit={handleLogin} className="space-y-4 mt-4 py-4">
           {error && <p className="text-red-500 text-sm text-center">{error}</p>}
@@ -45,7 +45,7 @@ const Login = () => {
             <label className="block text-gray-700">Email</label>
             <input
               type="email"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-roxo focus:outline-none"
+              className="w-full p-3 border border-cinza border-b-secondary rounded-lg focus:ring-2 focus:ring-primary  focus:outline-none"
               placeholder="seu@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -57,7 +57,7 @@ const Login = () => {
             <label className="block text-gray-700">Senha</label>
             <input
               type="password"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+              className="w-full p-3 border border-cinza border-b-secondary rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -65,13 +65,15 @@ const Login = () => {
             />
           </div>
 
-          <button
-            onClick={handleLogout}
-            type="submit"
-            className="w-full bg-secondary text-white p-3 rounded-lg hover:bg-alternativo transition-all duration-300"
-          >
-            Entrar
-          </button>
+          <div className="flex justify-center">
+            <button
+              onClick={handleLogout}
+              type="submit"
+              className="w-fit bg-secondary text-white p-3 rounded-lg hover:bg-alternativo transition-all duration-300 shadow-2xl"
+            >
+              Entrar
+            </button>
+          </div>
         </form>
       </div>
     </div>
