@@ -34,7 +34,17 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
+    <>
+      <style>{`
+        body {
+          
+          min-height: 100vh;
+          background: linear-gradient(to right, #3b82f6, #ec4899);
+          align-items: center;
+        }
+      `}</style>
+
+    <div className="bg-backgroundImage flex items-center justify-center min-h-screen bg-gray-50 px-4">
       <div className="bg-white p-6 sm:p-8  w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-primary uppercase">Login</h2>
 
@@ -77,6 +87,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
