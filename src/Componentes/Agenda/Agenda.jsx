@@ -204,17 +204,20 @@ const AgendaAtendimento = () => {
         <div className="w-full max-w-[100%] mx-auto  border  border-[rgba(128,128,128,0.3)] p-4 rounded-lg bg-gray-50 shadow-lg ">
          <h3 className="text-lg font-bold text-primary mb-4">Novo Agendamento</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <label className="text-sm text-gray-700">Data</label>
           <input
             type="date"
             value={novoAgendamento.data}
             onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
-            className="border p-2 rounded"
+            className=" p-2  w-full border px-3 py-2 rounded bg-gray-50 text-gray-800"
           />
+          <label className="text-sm text-gray-700">Horário</label>
           <input
             type="time"
             value={novoAgendamento.horario}
             onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
-            className="border p-2 rounded"
+            className="p-2  w-full border px-3 py-2 rounded bg-gray-50 text-gray-800 "
           />
           
           {/* 🟠 SELECT DE CLIENTES */}
