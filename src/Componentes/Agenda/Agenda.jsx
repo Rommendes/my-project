@@ -206,8 +206,9 @@ const AgendaAtendimento = () => {
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
     {/* Data */}
-    <div className="flex flex-col">
-      <label className="text-sm  mb-1 px-1 ">Data</label>
+    <div className="flex flex-col sm:flex-row gap-4">
+    <div className="flex-1">
+      <label className="block text-sm text-gray-700 mb-1 px-1" >Data</label>
       <input
         type="date"
         value={novoAgendamento.data}
@@ -217,14 +218,15 @@ const AgendaAtendimento = () => {
     </div>
 
     {/* Horário */}
-    <div className="flex flex-col">
-      <label className="text-sm  mb-1 px-1">Horário</label>
+    <div className="flex-1">
+      <label className="block text-sm text-gray-700 mb-1 px-1">Horário</label>
       <input
         type="time"
         value={novoAgendamento.horario}
         onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
         className="w-full border px-3 py-2 rounded bg-white text-gray-500 text-sm"
       />
+    </div>
     </div>
 
     {/* Cliente */}
