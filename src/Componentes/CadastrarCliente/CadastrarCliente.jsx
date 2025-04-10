@@ -23,6 +23,14 @@ const CadastrarCliente = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false); // Estado para indicar o carregamento
 
+
+  // ✅ Função para validar número ou retornar null
+  const toNullableNumber = (value) => {
+    const trimmed = value.trim();
+    return /^\d+$/.test(trimmed) ? parseInt(trimmed, 10) : null;
+  };
+
+  
   // Validação dos campos obrigatórios
   const validate = () => {
     let tempErrors = {};
@@ -66,11 +74,11 @@ const CadastrarCliente = () => {
           email: formData.email,
           data_aniversario: formData.dataAniversario,
           rua: formData.endereco.rua,
-          numero: formData.endereco.numero,
+          numero: toNullableNumber(formData.endereco.numero),
           complemento: formData.endereco.complemento,
           bairro: formData.endereco.bairro,
           cidade: formData.endereco.cidade,
-          cep: formData.endereco.cep,
+          cep: toNullableNumber(formData.endereco.cep),
         },
       ]);
 
@@ -97,7 +105,7 @@ const CadastrarCliente = () => {
       setErrors({});
     } catch (error) {
       console.error("Erro ao cadastrar cliente:", error.message);
-      alert("Erro ao cadastrar cliente.");
+      alert(`Erro ao cadastrar cliente: ${error.message || "Erro desconhecido"}`);
     } finally {
       setLoading(false);
     }
