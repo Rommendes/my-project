@@ -201,7 +201,7 @@ const AgendaAtendimento = () => {
        
     
         {/* 🟡 FORMULÁRIO DE NOVO AGENDAMENTO */}
-        <div className="w-full max-w-[100%] mx-auto border border-violet-100 p-4 rounded-lg bg-gray-50 shadow-lg">
+        <div className="w-full max-w-[100%] mx-auto border border-violet-200 p-4 rounded-lg bg-gray-50 shadow-lg">
   <h3 className="text-lg font-bold text-primary mb-4">Novo Agendamento</h3>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
