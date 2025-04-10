@@ -201,94 +201,121 @@ const AgendaAtendimento = () => {
        
     
         {/* 🟡 FORMULÁRIO DE NOVO AGENDAMENTO */}
-        <div className="w-full max-w-[100%] mx-auto  border  border-[rgba(128,128,128,0.3)] p-4 rounded-lg bg-gray-50 shadow-lg ">
-         <h3 className="text-lg font-bold text-primary mb-4">Novo Agendamento</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        
-        <label className="text-sm text-gray-700">Data</label>
-          <input
-            type="date"
-            value={novoAgendamento.data}
-            onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
-            className=" p-2  w-full border px-3 py-2 rounded bg-gray-50 text-gray-800"
-          />
-          <label className="text-sm text-gray-700">Horário</label>
-          <input
-            type="time"
-            value={novoAgendamento.horario}
-            onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
-            className="p-2  w-full border px-3 py-2 rounded bg-gray-50 text-gray-800 "
-          />
-          
-          {/* 🟠 SELECT DE CLIENTES */}
-         <select
-            value={novoAgendamento.cliente_id}
-            onChange={(e) => setNovoAgendamento({ ...novoAgendamento, cliente_id: e.target.value })}
-            className="border p-2 rounded"
-          >
-            <option value="">Selecione um cliente</option>
-            {clientes.map((cliente) => (
-              <option key={cliente.id} value={cliente.id}>
-                {cliente.nome}
-              </option>
-            ))}
-          </select> 
+        <div className="w-full max-w-[100%] mx-auto border border-gray-300 p-4 rounded-lg bg-gray-50 shadow-lg">
+  <h3 className="text-lg font-bold text-primary mb-4">Novo Agendamento</h3>
 
-          <select
-            value={novoAgendamento.pagamento}
-            onChange={(e) => setNovoAgendamento({ ...novoAgendamento, pagamento: e.target.value })}
-            className="border p-2 rounded w-full"
-          >
-            <option value="">Forma de pagamento</option>
-            <option value="Dinheiro">Dinheiro</option>
-            <option value="Cartão">Cartão</option>
-            <option value="Pix">Pix</option>
-            <option value="Não pagou">Não pagou</option>
-          </select>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {/* Data */}
+    <div className="flex flex-col">
+      <label className="text-sm text-gray-700 mb-1">Data</label>
+      <input
+        type="date"
+        value={novoAgendamento.data}
+        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
+        className="w-full border px-3 py-2 rounded bg-white text-gray-800"
+      />
+    </div>
 
-          <select
-            value={novoAgendamento.servico}
-            onChange={(e) => setNovoAgendamento({ ...novoAgendamento, servico: e.target.value })}
-            className="border p-2 rounded w-full"
-          >
-            <option value="">Serviço</option>
-            <option value="tintura">Tintura</option>
-            <option value="Corte">Corte</option>
-            <option value="escova progressiva">Escova progressiva</option>
-            <option value="butox">Butox</option>
-            <option value="manicure">Manicure</option>
-            <option value="maquiagem">maquiagem</option>
-            <option value="sobrancelha">Sobrancelha</option>
+    {/* Horário */}
+    <div className="flex flex-col">
+      <label className="text-sm text-gray-700 mb-1">Horário</label>
+      <input
+        type="time"
+        value={novoAgendamento.horario}
+        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
+        className="w-full border px-3 py-2 rounded bg-white text-gray-800"
+      />
+    </div>
 
-          </select>
+    {/* Cliente */}
+    <div className="flex flex-col">
+      <label className="text-sm text-gray-700 mb-1">Cliente</label>
+      <select
+        value={novoAgendamento.cliente_id}
+        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, cliente_id: e.target.value })}
+        className="w-full border px-3 py-2 rounded bg-white"
+      >
+        <option value="">Selecione um cliente</option>
+        {clientes.map((cliente) => (
+          <option key={cliente.id} value={cliente.id}>
+            {cliente.nome}
+          </option>
+        ))}
+      </select>
+    </div>
 
-        
-          <input
-            type="text"
-            placeholder="Valor"
-            value={novoAgendamento.valor}
-            onChange={(e) => setNovoAgendamento({ ...novoAgendamento, valor: e.target.value })}
-            className="border p-2 rounded"
-          />
-       
-          <input
-            type="text"
-            placeholder="Observações"
-            value={novoAgendamento.obs}
-            onChange={(e) => setNovoAgendamento({ ...novoAgendamento, obs: e.target.value })}
-            className="border p-2 rounded"
-          />
+    {/* Pagamento */}
+    <div className="flex flex-col">
+      <label className="text-sm text-gray-700 mb-1">Forma de Pagamento</label>
+      <select
+        value={novoAgendamento.pagamento}
+        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, pagamento: e.target.value })}
+        className="w-full border px-3 py-2 rounded bg-white"
+      >
+        <option value="">Selecione</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Cartão">Cartão</option>
+        <option value="Pix">Pix</option>
+        <option value="Não pagou">Não pagou</option>
+      </select>
+    </div>
 
-          <button
-              onClick={salvarAgendamento}
-              className=" bg-secondary px-3  py-1  pt-1 rounded hover:bg-alternativo text-white w-fit shadow-lg "
-            >
-              <Save size={25} />
-            </button>
+    {/* Serviço */}
+    <div className="flex flex-col">
+      <label className="text-sm text-gray-700 mb-1">Serviço</label>
+      <select
+        value={novoAgendamento.servico}
+        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, servico: e.target.value })}
+        className="w-full border px-3 py-2 rounded bg-white"
+      >
+        <option value="">Selecione</option>
+        <option value="tintura">Tintura</option>
+        <option value="Corte">Corte</option>
+        <option value="escova progressiva">Escova progressiva</option>
+        <option value="butox">Butox</option>
+        <option value="manicure">Manicure</option>
+        <option value="maquiagem">Maquiagem</option>
+        <option value="sobrancelha">Sobrancelha</option>
+      </select>
+    </div>
 
-        </div>
-    
-        </div>
+    {/* Valor */}
+    <div className="flex flex-col">
+      <label className="text-sm text-gray-700 mb-1">Valor</label>
+      <input
+        type="text"
+        placeholder="Valor"
+        value={novoAgendamento.valor}
+        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, valor: e.target.value })}
+        className="w-full border px-3 py-2 rounded bg-white"
+      />
+    </div>
+
+    {/* Observações */}
+    <div className="flex flex-col md:col-span-2">
+      <label className="text-sm text-gray-700 mb-1">Observações</label>
+      <input
+        type="text"
+        placeholder="Observações"
+        value={novoAgendamento.obs}
+        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, obs: e.target.value })}
+        className="w-full border px-3 py-2 rounded bg-white"
+      />
+    </div>
+
+    {/* Botão salvar */}
+    <div className="flex items-end">
+      <button
+        onClick={salvarAgendamento}
+        className="bg-secondary px-4 py-2 rounded hover:bg-alternativo text-white shadow flex items-center gap-2"
+      >
+        <Save size={20} />
+        <span className="hidden sm:inline">Salvar</span>
+      </button>
+    </div>
+  </div>
+</div>
+
     
         {/* 🔵 AGRUPAMENTO POR DIA DA SEMANA */}
 
