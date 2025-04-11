@@ -3,6 +3,7 @@ import { supabase } from "../../supabaseClient";
 import { Pencil, Trash2, Save } from "lucide-react";
 import BtnHome from "../BotaoHome/BtnHome";
 import BotaoSair from "../BotaoSair//index";
+import InputMask from 'react-input-mask';
 
 
 
@@ -209,26 +210,28 @@ const AgendaAtendimento = () => {
     {/* Data e Horário */}
 <div className="flex gap-4 w-full">
   {/* Data */}
-  <div className="flex flex-col flex-1">
-    <label className="text-sm text-gray-700 mb-1">Data</label>
-    <input
-      type="date"
-      value={novoAgendamento.data}
-      onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
-      className="h-10 border px-3 rounded bg-white text-gray-600 text-sm w-full"
-    />
-  </div>
+  <div className="w-full">
+  <label className="text-sm text-gray-700 mb-1 px-1">Data</label>
+  <InputMask
+    mask="99/99/9999"
+    placeholder="dd/mm/aaaa"
+    value={novoAgendamento.data}
+    onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
+    className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
+  />
+</div>
 
   {/* Horário */}
-  <div className="flex flex-col flex-1">
-    <label className="text-sm text-gray-700 mb-1">Horário</label>
-    <input
-      type="time"
-      value={novoAgendamento.horario}
-      onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
-      className="h-10 border px-3 rounded bg-white text-gray-600 text-sm w-full"
-    />
-  </div>
+  <div className="w-full">
+  <label className="text-sm text-gray-700 mb-1 px-1">Horário</label>
+  <InputMask
+    mask="99:99"
+    placeholder="hh:mm"
+    value={novoAgendamento.horario}
+    onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
+    className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
+  />
+</div>
 </div>
 
 
