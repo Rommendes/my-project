@@ -201,43 +201,40 @@ const AgendaAtendimento = () => {
        
     
         {/* 🟡 FORMULÁRIO DE NOVO AGENDAMENTO */}
+      
         <div className="w-full max-w-[100%] mx-auto border border-violet-200 p-4 rounded-lg bg-gray-50 shadow-lg">
   <h3 className="text-lg font-bold text-primary mb-4">Novo Agendamento</h3>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-    
-    <div className="flex flex-col sm:flex-row gap-4 w-full">
-      {/* Data */}
-      <div className="w-full">
-        <label className="text-sm text-gray-700" >Data</label>
+    {/* Data e Horário - lado a lado com mesmas larguras */}
+    <div className="flex gap-4 w-full">
+      <div className="flex flex-col w-1/2">
+        <label className="text-sm text-gray-700 mb-1">Data</label>
         <input
           type="date"
           value={novoAgendamento.data}
           onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
-          className="w-full border px- py-2 rounded bg-white text-gray-500 text-sm"
+          className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
         />
       </div>
-
-      {/* Horário */}
-      <div className="w-full">
-        <label className="block text-sm text-gray-700 mb-1 px-1">Horário</label>
+      <div className="flex flex-col w-1/2">
+        <label className="text-sm text-gray-700 mb-1">Horário</label>
         <input
           type="time"
           value={novoAgendamento.horario}
           onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
-          className="w-full border px-3 py-2 rounded bg-white text-gray-500 text-sm"
+          className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
         />
       </div>
     </div>
 
     {/* Cliente */}
     <div className="flex flex-col">
-      <label className="text-sm  mb-1 py-2 px-1">Cliente</label>
+      <label className="text-sm mb-1">Cliente</label>
       <select
         value={novoAgendamento.cliente_id}
         onChange={(e) => setNovoAgendamento({ ...novoAgendamento, cliente_id: e.target.value })}
-        className="w-full border px-3 py-2 rounded bg-white text-gray-500 text-sm"
+        className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
       >
         <option value="">Selecione um cliente</option>
         {clientes.map((cliente) => (
@@ -250,11 +247,11 @@ const AgendaAtendimento = () => {
 
     {/* Pagamento */}
     <div className="flex flex-col">
-      <label className="text-sm text-gray-700 mb-1 px-1">Forma de Pagamento</label>
+      <label className="text-sm text-gray-700 mb-1">Forma de Pagamento</label>
       <select
         value={novoAgendamento.pagamento}
         onChange={(e) => setNovoAgendamento({ ...novoAgendamento, pagamento: e.target.value })}
-        className="w-full border px-3 py-2 rounded bg-white text-gray-500 text-sm"
+        className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
       >
         <option value="">Selecione</option>
         <option value="Dinheiro">Dinheiro</option>
@@ -266,11 +263,11 @@ const AgendaAtendimento = () => {
 
     {/* Serviço */}
     <div className="flex flex-col">
-      <label className="text-sm  mb-1 px-1">Serviço</label>
+      <label className="text-sm mb-1">Serviço</label>
       <select
         value={novoAgendamento.servico}
         onChange={(e) => setNovoAgendamento({ ...novoAgendamento, servico: e.target.value })}
-        className="w-full border px-3 py-2 rounded bg-white text-gray-500 text-sm"
+        className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
       >
         <option value="">Selecione</option>
         <option value="tintura">Tintura</option>
@@ -285,25 +282,25 @@ const AgendaAtendimento = () => {
 
     {/* Valor */}
     <div className="flex flex-col">
-      <label className="text-sm  mb-1 px-1">Valor</label>
+      <label className="text-sm mb-1">Valor</label>
       <input
         type="text"
         placeholder="Valor"
         value={novoAgendamento.valor}
         onChange={(e) => setNovoAgendamento({ ...novoAgendamento, valor: e.target.value })}
-        className="w-full border px-3 py-2 rounded bg-white text-gray-600 text-sm"
+        className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
       />
     </div>
 
     {/* Observações */}
     <div className="flex flex-col md:col-span-2">
-      <label className="text-sm  mb-1 px-1">Observações</label>
+      <label className="text-sm mb-1">Observações</label>
       <input
         type="text"
         placeholder="Observações"
         value={novoAgendamento.obs}
         onChange={(e) => setNovoAgendamento({ ...novoAgendamento, obs: e.target.value })}
-        className="w-full border px-3 py-2 rounded bg-white text-gray-500 text-sm"
+        className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
       />
     </div>
 
