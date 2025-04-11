@@ -3,7 +3,7 @@ import { supabase } from "../../supabaseClient";
 import { Pencil, Trash2, Save } from "lucide-react";
 import BtnHome from "../BotaoHome/BtnHome";
 import BotaoSair from "../BotaoSair//index";
-import InputMask from 'react-input-mask';
+import InputMask from "react-input-mask-next";
 
 
 
@@ -183,9 +183,24 @@ const AgendaAtendimento = () => {
     return acc;
   }, {});
   
-//🧠 Função fecharSemana
+//mascara para data
+const formatarData = (valor) => {
+  const v = valor.replace(/\D/g, '').slice(0, 8);
+  const dia = v.slice(0, 2);
+  const mes = v.slice(2, 4);
+  const ano = v.slice(4, 8);
+  return [dia, mes, ano].filter(Boolean).join('/');
+};
 
 
+//Máscara para Horário
+const formatarHorario = (valor) => {
+  const v = valor.replace(/\D/g, '').slice(0, 4);
+  const hora = v.slice(0, 2);
+  const minuto = v.slice(2, 4);
+  return [hora, minuto].filter(Boolean).join(':');
+};
+  // Aplicando a máscara ao valor
 
   return (
 
@@ -208,31 +223,42 @@ const AgendaAtendimento = () => {
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
     {/* Data e Horário */}
-<div className="flex gap-4 w-full">
-  {/* Data */}
-  <div className="w-full">
-  <label className="text-sm text-gray-700 mb-1 px-1">Data</label>
-  <InputMask
-    mask="99/99/9999"
-    placeholder="dd/mm/aaaa"
-    value={novoAgendamento.data}
-    onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
-    className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
-  />
-</div>
 
-  {/* Horário */}
+    <div className="flex flex-col sm:flex-row gap-4 w-full">
+  {/* 🗓️ Data */}
   <div className="w-full">
-  <label className="text-sm text-gray-700 mb-1 px-1">Horário</label>
-  <InputMask
-    mask="99:99"
-    placeholder="hh:mm"
-    value={novoAgendamento.horario}
-    onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
-    className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
-  />
-</div>
-</div>
+    <label className="text-sm text-gray-700">Data</label>
+  
+    <input
+      type="text"
+      placeholder="dd/mm/aaaa"
+      value={formatarData(novoAgendamento.data)}
+      onChange={(e) =>
+        setNovoAgendamento({ ...novoAgendamento, data: e.target.value })
+      }
+      className="w-full border px-3 py-2 rounded bg-white text-gray-600 text-sm"
+    />
+
+    
+
+  </div>
+
+    {/* ⏰ Horário */}
+    <div className="w-full">
+      <label className="text-sm text-gray-700">Horário</label>
+      <input
+        type="text"
+        placeholder="hh:mm"
+        value={formatarHorario(novoAgendamento.horario)}
+        onChange={(e) =>
+          setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })
+        }
+        className="w-full border px-3 py-2 rounded bg-white text-gray-600 text-sm"
+      />
+
+
+    </div>
+  </div>
 
 
     {/* Cliente */}
