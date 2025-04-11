@@ -206,27 +206,31 @@ const AgendaAtendimento = () => {
   <h3 className="text-lg font-bold text-primary mb-4">Novo Agendamento</h3>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-    {/* Data e Horário - lado a lado com mesmas larguras */}
-    <div className="flex gap-4 w-full">
-      <div className="flex flex-col w-1/2">
-        <label className="text-sm text-gray-700 mb-1">Data</label>
-        <input
-          type="date"
-          value={novoAgendamento.data}
-          onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
-          className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
-        />
-      </div>
-      <div className="flex flex-col w-1/2">
-        <label className="text-sm text-gray-700 mb-1">Horário</label>
-        <input
-          type="time"
-          value={novoAgendamento.horario}
-          onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
-          className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
-        />
-      </div>
-    </div>
+    {/* Data e Horário */}
+<div className="flex gap-4 w-full">
+  {/* Data */}
+  <div className="flex flex-col flex-1">
+    <label className="text-sm text-gray-700 mb-1">Data</label>
+    <input
+      type="date"
+      value={novoAgendamento.data}
+      onChange={(e) => setNovoAgendamento({ ...novoAgendamento, data: e.target.value })}
+      className="h-10 border px-3 rounded bg-white text-gray-600 text-sm w-full"
+    />
+  </div>
+
+  {/* Horário */}
+  <div className="flex flex-col flex-1">
+    <label className="text-sm text-gray-700 mb-1">Horário</label>
+    <input
+      type="time"
+      value={novoAgendamento.horario}
+      onChange={(e) => setNovoAgendamento({ ...novoAgendamento, horario: e.target.value })}
+      className="h-10 border px-3 rounded bg-white text-gray-600 text-sm w-full"
+    />
+  </div>
+</div>
+
 
     {/* Cliente */}
     <div className="flex flex-col">
