@@ -3,7 +3,7 @@ import { supabase } from "../../supabaseClient";
 import { Pencil, Trash2, Save } from "lucide-react";
 import BtnHome from "../BotaoHome/BtnHome";
 import BotaoSair from "../BotaoSair//index";
-import InputMask from "react-input-mask-next";
+
 
 
 
