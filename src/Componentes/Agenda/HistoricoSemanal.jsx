@@ -141,55 +141,53 @@ export default function HistoricoSemanal() {
           <BotaoSair />
         </div>
       </header>
-      <div className="flex justify-between items-center mb-4">
-      <div className="flex flex-col sm:flex-row justify-end gap-2 sm:gap-4 mb-4">
-         <div className="flex justify-end gap-4 mb-4"> 
-          <button
-            onClick={exportarParaPDF}
-            className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-          >
-            <FileText size={18} />
-            Exportar para PDF
-          </button>
-          <button
-            onClick={() => exportarParaExcel(agendamentosAgrupados)}
-            className="flex items-center gap-1 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-green-600 text-white rounded hover:bg-green-700 transition"
-          >
-            <FileDown size={18} />
-            Exportar para Excel
-          </button>
-         </div> 
-        </div>
+     
+      <div className="flex flex-col sm:flex-row justify-between items-center flex-wrap gap-4 mb-4">
+  {/* Botões de exportação */}
+  <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+    <button
+      onClick={exportarParaPDF}
+      className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-red-600 text-white rounded hover:bg-red-700 transition"
+    >
+      <FileText size={16} />
+      PDF
+    </button>
+    <button
+      onClick={() => exportarParaExcel(agendamentosAgrupados)}
+      className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-green-600 text-white rounded hover:bg-green-700 transition"
+    >
+      <FileDown size={16} />
+      Excel
+    </button>
+  </div>
 
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-4">
-           <div className="flex justify-end gap-4 mb-4"> 
-            <button
-              onClick={() => {
-                const novaSemana = semanaAtual + 1;
-                setSemanaAtual(novaSemana);
-                buscarHistorico(novaSemana);
-              }}
-              className="flex items-center justify-center gap-1 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-            >
-              <ArrowRight size={18} />
-              Semana mais recente
-            </button>
+  {/* Botões de navegação de semana */}
+  <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+    <button
+      onClick={() => {
+        const novaSemana = semanaAtual + 1;
+        setSemanaAtual(novaSemana);
+        buscarHistorico(novaSemana);
+      }}
+      className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+    >
+      <ArrowRight size={16} />
+      Mais recente
+    </button>
+    <button
+      onClick={() => {
+        const novaSemana = semanaAtual - 1;
+        setSemanaAtual(novaSemana);
+        buscarHistorico(novaSemana);
+      }}
+      className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+    >
+      <ArrowLeft size={16} />
+      Semana anterior
+    </button>
+  </div>
+</div>
 
-            <button
-              onClick={() => {
-                const novaSemana = semanaAtual - 1;
-                setSemanaAtual(novaSemana);
-                buscarHistorico(novaSemana);
-              }}
-              className="flex items-center justify-center gap-1 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-            >
-              <ArrowLeft size={18} />
-              Semana anterior
-            </button>
-          </div> 
-        </div>
-        </div>
-      
 
       {Object.entries(agendamentosAgrupados).length === 0 ? (
         <p className="text-gray-600">Nenhum agendamento encontrado para essa semana.</p>
