@@ -142,9 +142,9 @@ export default function HistoricoSemanal() {
         </div>
       </header>
      
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4 w-full">
+      <div className="flex justify-between items-center flex-wrap sm:flex-nowrap gap-2 sm:gap-4 w-full mb-4">
   {/* Botões de exportação (à esquerda) */}
-  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+  <div className="flex items-center gap-2">
     <button
       onClick={exportarParaPDF}
       className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-red-600 text-white rounded hover:bg-red-700 transition"
@@ -161,8 +161,8 @@ export default function HistoricoSemanal() {
     </button>
   </div>
 
-  {/* Botões de navegação de semana (à direita) */}
-  <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+  {/* Botões de semana (à direita) */}
+  <div className="flex items-center gap-2">
     <button
       onClick={() => {
         const novaSemana = semanaAtual + 1;
@@ -187,6 +187,7 @@ export default function HistoricoSemanal() {
     </button>
   </div>
 </div>
+
 
 
       {Object.entries(agendamentosAgrupados).length === 0 ? (
