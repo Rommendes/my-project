@@ -142,34 +142,21 @@ export default function HistoricoSemanal() {
         </div>
       </header>
      
-      <div className="grid grid-cols-2 gap-y-2 sm:flex sm:justify-between sm:items-center sm:gap-4 w-full mb-4">
+     
   {/* Coluna esquerda - PDF e Excel */}
-  <div className="flex flex-col gap-2">
-    <button
-      onClick={exportarParaPDF}
-      className="w-36 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-red-600 text-white rounded hover:bg-red-700 transition"
-    >
-      <FileText size={24} />
-      PDF
-    </button>
-    <button
-      onClick={() => exportarParaExcel(agendamentosAgrupados)}
-      className="w-36 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-green-600 text-white rounded hover:bg-green-700 transition"
-    >
-      <FileDown size={24} />
-      Excel
-    </button>
-  </div>
+    
+
 
   {/* Coluna direita - Semana mais recente e anterior */}
-  <div className="flex flex-col items-end gap-2">
+  {/* <div className="grid grid-cols-2 gap-y-2 sm:flex sm:justify-between sm:items-center sm:gap-4 w-full mb-4"> */}
+  <div className="flex items-center justify-center gap-4 px-3 py-1.5 text-sm sm:text-base  hover:text-white transition mb-4">
     <button
       onClick={() => {
         const novaSemana = semanaAtual + 1;
         setSemanaAtual(novaSemana);
         buscarHistorico(novaSemana);
       }}
-      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base  text-primary rounded hover:bg-secondary border border-primary transition"
     >
       <ArrowRight size={24} />
       Semana mais recente
@@ -180,13 +167,13 @@ export default function HistoricoSemanal() {
         setSemanaAtual(novaSemana);
         buscarHistorico(novaSemana);
       }}
-      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base  text-primary border border-primary rounded hover:bg-secondary transition"
     >
       <ArrowLeft size={24} />
       Semana anterior
     </button>
   </div>
-</div>
+  {/* </div> */}
 
 
 
@@ -229,14 +216,30 @@ export default function HistoricoSemanal() {
       )}
 
       {/* Totalizador */}
-      <div className="mt-8 bg-gray-100 p-4 rounded shadow">
-  <h3 className="text-lg font-semibold text-gray-700">Resumo Financeiro - {mesSelecionado}</h3>
+      <div className="mt-8 bg-gray-100 p-4 rounded shadow border border-gray-300">
+  <h3 className="text-lg font-semibold text-primary">Resumo Financeiro - {mesSelecionado}</h3>
   <p className="mt-2">
     💰 Total da semana: <span className="font-bold text-green-700">{formatarValor(totalSemana)}</span>
   </p>
   <p className="mt-1">
     📅 Total do mês: <span className="font-bold text-blue-700">{formatarValor(totalMes)}</span>
   </p>
+  <div className="container flex gap-2 mt-2 mb-2">
+  <button
+    onClick={exportarParaPDF}
+    className="w-fit flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base border border-primary text-primary rounded hover:bg-secondary hover:text-white transition"
+  >
+    <FileText size={24} />
+    PDF
+  </button>
+  <button
+    onClick={() => exportarParaExcel(agendamentosAgrupados)}
+    className=" flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base border border-primary text-primary rounded hover:bg-secondary hover:text-white transition w-fit"
+  >
+    <FileDown size={24} />
+    Excel
+  </button>
+</div>
 </div>
       
     </div>
