@@ -147,14 +147,14 @@ export default function HistoricoSemanal() {
   <div className="flex flex-col gap-2">
     <button
       onClick={exportarParaPDF}
-      className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-red-600 text-white rounded hover:bg-red-700 transition"
+      className="w-36 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-red-600 text-white rounded hover:bg-red-700 transition"
     >
       <FileText size={16} />
       PDF
     </button>
     <button
       onClick={() => exportarParaExcel(agendamentosAgrupados)}
-      className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-green-600 text-white rounded hover:bg-green-700 transition"
+      className="w-36 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-green-600 text-white rounded hover:bg-green-700 transition"
     >
       <FileDown size={16} />
       Excel
@@ -169,7 +169,7 @@ export default function HistoricoSemanal() {
         setSemanaAtual(novaSemana);
         buscarHistorico(novaSemana);
       }}
-      className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+      className="w-36 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
     >
       <ArrowRight size={16} />
       Mais recente
@@ -180,14 +180,13 @@ export default function HistoricoSemanal() {
         setSemanaAtual(novaSemana);
         buscarHistorico(novaSemana);
       }}
-      className="flex items-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+      className="w-36 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base bg-blue-600 text-white rounded hover:bg-blue-700 transition"
     >
       <ArrowLeft size={16} />
       Semana anterior
     </button>
   </div>
 </div>
-
 
 
 
