@@ -11,6 +11,8 @@ import BotaoSair from "../BotaoSair";
 import BtnHome from "../BotaoHome/BtnHome";
 
 export default function HistoricoSemanal() {
+  const [mesSelecionado, setMesSelecionado] = useState("");
+
   const [semanaAtual, setSemanaAtual] = useState(0);
   const [agendamentos, setAgendamentos] = useState([]);
   const [totalMes, setTotalMes] = useState(0); // 👈 total do mês
@@ -50,24 +52,28 @@ export default function HistoricoSemanal() {
     const hoje = new Date();
     const referencia = new Date();
     referencia.setDate(hoje.getDate() + semanaOffset * 7);
-
+  
     const inicioMes = new Date(referencia.getFullYear(), referencia.getMonth(), 1);
     const fimMes = new Date(referencia.getFullYear(), referencia.getMonth() + 1, 0);
-
+  
     const { data, error } = await supabase
       .from("agendamentos")
       .select("valor")
       .gte("data", inicioMes.toISOString())
       .lte("data", fimMes.toISOString());
-
+  
     if (error) {
       console.error("Erro ao buscar total do mês:", error);
       return;
     }
-
+  
     const total = data.reduce((soma, ag) => soma + (ag.valor || 0), 0);
     setTotalMes(total);
+  
+    const nomeMes = inicioMes.toLocaleString("pt-BR", { month: "long", year: "numeric" });
+    setMesSelecionado(nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1)); // Capitaliza a primeira letra
   };
+  
 
   const agendamentosAgrupados = agendamentos.reduce((acc, agendamento) => {
     const data = agendamento.data;
@@ -223,10 +229,15 @@ export default function HistoricoSemanal() {
 
       {/* Totalizador */}
       <div className="mt-8 bg-gray-100 p-4 rounded shadow">
-        <h3 className="text-lg font-semibold text-gray-700">Resumo Financeiro</h3>
-        <p className="mt-2">💰 Total da semana: <span className="font-bold text-green-700">{formatarValor(totalSemana)}</span></p>
-        <p className="mt-1">📅 Total do mês: <span className="font-bold text-blue-700">{formatarValor(totalMes)}</span></p>
-      </div>
+  <h3 className="text-lg font-semibold text-gray-700">Resumo Financeiro - {mesSelecionado}</h3>
+  <p className="mt-2">
+    💰 Total da semana: <span className="font-bold text-green-700">{formatarValor(totalSemana)}</span>
+  </p>
+  <p className="mt-1">
+    📅 Total do mês: <span className="font-bold text-blue-700">{formatarValor(totalMes)}</span>
+  </p>
+</div>
+      
     </div>
   );
 }
