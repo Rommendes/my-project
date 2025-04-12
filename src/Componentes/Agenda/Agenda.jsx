@@ -209,7 +209,7 @@ const AgendaAtendimento = () => {
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
     {/* Data e Horário */}
 
-    {/* <div className="flex flex-col sm:flex-row gap-4 w-full"> */}
+     <div className="flex flex-col sm:flex-row gap-4 w-full">
   {/* 🗓️ Data */}
   <div className="w-full">
     <label className="text-sm text-gray-700">Data</label>
@@ -231,7 +231,7 @@ const AgendaAtendimento = () => {
         className="w-full border px-3 py-2 rounded bg-white text-gray-600 text-sm"
       />
     </div>
-  
+  </div>
 
 
     {/* Cliente */}
@@ -251,6 +251,16 @@ const AgendaAtendimento = () => {
       </select>
     </div>
 
+
+    {/* Serviço */}
+    <div className="flex flex-col">
+      <label className="text-sm mb-1">Serviço</label>
+      <select
+        value={novoAgendamento.servico}
+        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, servico: e.target.value })}
+        className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
+      >
+
     {/* Pagamento */}
     <div className="flex flex-col">
       <label className="text-sm text-gray-700 mb-1">Forma de Pagamento</label>
@@ -266,15 +276,6 @@ const AgendaAtendimento = () => {
         <option value="Não pagou">Não pagou</option>
       </select>
     </div>
-
-    {/* Serviço */}
-    <div className="flex flex-col">
-      <label className="text-sm mb-1">Serviço</label>
-      <select
-        value={novoAgendamento.servico}
-        onChange={(e) => setNovoAgendamento({ ...novoAgendamento, servico: e.target.value })}
-        className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
-      >
         <option value="">Selecione</option>
         <option value="tintura">Tintura</option>
         <option value="Corte">Corte</option>
@@ -301,7 +302,7 @@ const AgendaAtendimento = () => {
     {/* Observações */}
     <div className="flex flex-col md:col-span-2">
       <label className="text-sm mb-1">Observações</label>
-      <input
+      <textarea
         type="text"
         placeholder="Observações"
         value={novoAgendamento.obs}
@@ -311,7 +312,7 @@ const AgendaAtendimento = () => {
     </div>
 
     {/* Botão salvar */}
-    <div className="flex items-end">
+    {/* <div className="flex items-end">
       <button
         onClick={salvarAgendamento}
         className="bg-secondary px-4 py-2 rounded hover:bg-alternativo text-white shadow flex items-center gap-2"
@@ -319,8 +320,15 @@ const AgendaAtendimento = () => {
         <Save size={20} />
         <span className="hidden sm:inline">Salvar</span>
       </button>
-    </div>
+    </div> */}
   </div>
+  <button
+        onClick={salvarAgendamento}
+        className="bg-secondary px-4 py-2 rounded hover:bg-alternativo text-white shadow flex items-center gap-2 mt-5"
+      >
+        <Save size={20} />
+        <span className="hidden sm:inline">Salvar</span>
+      </button>
 </div>
 
     
