@@ -120,7 +120,7 @@ const CadastrarCliente = () => {
         margin: 0;
         padding: 0;
         min-height: 100vh;
-        background: linear-gradient(to right, #3b82f6, #ec4899);
+      
         display: flex;
         justify-content: center;
         align-items: center;

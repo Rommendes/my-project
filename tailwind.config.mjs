@@ -26,6 +26,12 @@ export default {
         "gradient-custom": "linear-gradient(to bottom right, #9333EA,#9333EA, #FFFF19, #2F3136)",
       },
     },
+    fontFamily: {
+      sans: ["Poppins", "sans-serif"],
+      serif: ["Merriweather", "serif"],
+      mono: ["Menlo", "monospace"],
+    },
+  
   },
   plugins: [],
 };

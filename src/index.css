@@ -2,3 +2,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* src/index.css ou src/main.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Seus estilos personalizados */
+@layer components {
+  .botao-menu {
+    @apply bg-primary text-white p-4 rounded-2xl flex items-center gap-4 hover:bg-blue-800 transition;;
+  }
+
+  .botao-submenu {
+    @apply block w-full text-white px-4 py-2 rounded-lg text-center;
+  }
+
+  
+
+  .botao-submenu-cor {
+    @apply bg-secondary hover:bg-alternativo;
+  }
+  body {
+    @apply bg-blue-50 ; /*bg-pink-50 ou bg-gray-200, bg-pink-50, etc */
+  }
+}

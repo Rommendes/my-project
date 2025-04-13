@@ -2,7 +2,7 @@ import React ,{ useState } from "react"
 import {  Routes, Route} from "react-router-dom"
 import 'material-icons/iconfont/material-icons.css'
 
-// import './App.css'
+ import './App.css'
 import Login from './Pages/Login'
 import Home from "./Pages/Home"
 import CadastrarCliente from "./Componentes/CadastrarCliente/CadastrarCliente";

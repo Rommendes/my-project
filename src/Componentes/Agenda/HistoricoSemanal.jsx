@@ -162,7 +162,7 @@ export default function HistoricoSemanal() {
       <ArrowLeft size={24} />
       Semana anterior
     </button>
-    
+
     <button
       onClick={() => {
         const novaSemana = semanaAtual + 1;
