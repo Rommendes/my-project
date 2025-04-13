@@ -20,7 +20,6 @@
   }
 
   
-
   .botao-submenu-cor {
     @apply bg-secondary hover:bg-alternativo;
   }

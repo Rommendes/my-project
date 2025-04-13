@@ -157,7 +157,7 @@ export default function HistoricoSemanal() {
         setSemanaAtual(novaSemana);
         buscarHistorico(novaSemana);
       }}
-      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base  text-primary border border-primary rounded hover:bg-secondary transition"
+      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base  text-secondary border border-secondary rounded hover:border-primary transition hover:text-primary"
     >
       <ArrowLeft size={24} />
       Semana anterior
@@ -169,7 +169,7 @@ export default function HistoricoSemanal() {
         setSemanaAtual(novaSemana);
         buscarHistorico(novaSemana);
       }}
-      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base  text-primary rounded hover:bg-secondary border border-primary transition"
+      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base border border-secondary  text-secondary rounded hover:text-primary hover:border-primary transition"
     >
       <ArrowRight size={24} />
       Mais recente
@@ -190,25 +190,25 @@ export default function HistoricoSemanal() {
               <table className="w-full border border-gray-300 shadow rounded overflow-hidden">
                 <thead className="border bg-violet-200 text-sm uppercase font-bold">
                   <tr>
-                    <th className="border px-4 py-2">Data</th>
-                    <th className="border px-4 py-2">Cliente</th>
-                    <th className="border px-4 py-2">Serviço</th>
-                    <th className="border px-4 py-2">Valor</th>
-                    <th className="border px-4 py-2">Pagamento</th>
+                    <th className="border border-gray-300 px-4 py-2">Data</th>
+                    <th className="border border-gray-300 px-4 py-2">Cliente</th>
+                    <th className="border border-gray-300 px-4 py-2">Serviço</th>
+                    <th className="border border-gray-300 px-4 py-2">Valor</th>
+                    <th className="border border-gray-300 px-4 py-2">Pagamento</th>
                   </tr>
                 </thead>
                 <tbody>
                   {ags.map((agendamento) => (
-                    <tr className="border" key={agendamento.id}>
-                      <td className="border px-4 py-2">
+                    <tr className="border border-gray-300" key={agendamento.id}>
+                      <td className="border border-gray-300 px-4 py-2">
                         {new Date(agendamento.data).toLocaleDateString("pt-BR")}
                       </td>
                       <td className="border px-4 py-2">
                         {agendamento.cliente?.nome || "Cliente não encontrado"}
                       </td>
-                      <td className="border px-4 py-2">{agendamento.servico}</td>
-                      <td className="border px-4 py-2">{formatarValor(agendamento.valor)}</td>
-                      <td className="border px-4 py-2">{agendamento.pagamento}</td>
+                      <td className="border border-gray-300 px-4 py-2">{agendamento.servico}</td>
+                      <td className="border border-gray-300 px-4 py-2">{formatarValor(agendamento.valor)}</td>
+                      <td className=" border border-gray-300 px-4 py-2">{agendamento.pagamento}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -220,30 +220,46 @@ export default function HistoricoSemanal() {
 
       {/* Totalizador */}
       <div className="mt-8 bg-gray-100 p-4 rounded shadow border border-gray-300">
-  <h3 className="text-lg font-semibold text-primary">Resumo Financeiro - {mesSelecionado}</h3>
-  <p className="mt-2">
-    💰 Total da semana: <span className="font-bold text-green-700">{formatarValor(totalSemana)}</span>
-  </p>
-  <p className="mt-1">
-    📅 Total do mês: <span className="font-bold text-blue-700">{formatarValor(totalMes)}</span>
-  </p>
-  <div className="container flex gap-2 mt-2 mb-2">
-  <button
-    onClick={exportarParaPDF}
-    className="w-fit flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base border border-primary text-primary rounded hover:bg-secondary hover:text-white transition"
-  >
-    <FileText size={24} />
-    PDF
-  </button>
-  <button
-    onClick={() => exportarParaExcel(agendamentosAgrupados)}
-    className=" flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base border border-primary text-primary rounded hover:bg-secondary hover:text-white transition w-fit"
-  >
-    <FileDown size={24} />
-    Excel
-  </button>
+  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    {/* Resumo Financeiro */}
+    <div>
+      <h3 className="text-lg font-semibold text-primary">
+        Resumo Financeiro - {mesSelecionado}
+      </h3>
+      <p className="mt-2">
+        💰 Total da semana:{" "}
+        <span className="font-bold text-green-700">
+          {formatarValor(totalSemana)}
+        </span>
+      </p>
+      <p className="mt-1">
+        📅 Total do mês:{" "}
+        <span className="font-bold text-blue-700">
+          {formatarValor(totalMes)}
+        </span>
+      </p>
+    </div>
+
+    {/* Botões de Exportação */}
+    <div className="flex gap-2 self-end sm:self-auto">
+      <button
+        onClick={exportarParaPDF}
+        className="w-fit flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base border border-primary text-primary rounded hover:bg-secondary hover:border-none hover:text-white transition"
+      >
+        <FileText size={24} />
+        PDF
+      </button>
+      <button
+        onClick={() => exportarParaExcel(agendamentosAgrupados)}
+        className="w-fit flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base border border-primary text-primary rounded hover:bg-secondary hover:border-none hover:text-white transition"
+      >
+        <FileDown size={24} />
+        Excel
+      </button>
+    </div>
+  </div>
 </div>
-</div>
+
       
     </div>
   );

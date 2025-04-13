@@ -42,11 +42,7 @@ const ListaClientes = () => {
 
   return (
     <>
-     <style>{`
-      body {
-        background: linear-gradient(to right, #3b82f6, #ec4899);
-      }
-    `}</style>
+     
 <div className="p-4 rounded-lg">
   {/* Container principal */}
   <div className="container mx-auto p-4 translate-y-[150px]">

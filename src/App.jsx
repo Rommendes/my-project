@@ -2,7 +2,7 @@ import React ,{ useState } from "react"
 import {  Routes, Route} from "react-router-dom"
 import 'material-icons/iconfont/material-icons.css'
 
- import './App.css'
+
 import Login from './Pages/Login'
 import Home from "./Pages/Home"
 import CadastrarCliente from "./Componentes/CadastrarCliente/CadastrarCliente";
@@ -20,8 +20,8 @@ function App() {
   return (
     
 
-   
-    <Routes>
+   <div>
+    <Routes >
       <Route path="/"element= { <Login setIsAuthenticated={setIsAuthenticated}/> }/>;
       <Route path="/busca-cliente" element={<BuscaCliente />} />
       <Route path="/home" element = { <Home/> }/>
@@ -34,6 +34,7 @@ function App() {
       
   
     </Routes>
+    </div>
    
   )
 }
