@@ -150,18 +150,8 @@ export default function HistoricoSemanal() {
   {/* Coluna direita - Semana mais recente e anterior */}
   {/* <div className="grid grid-cols-2 gap-y-2 sm:flex sm:justify-between sm:items-center sm:gap-4 w-full mb-4"> */}
   <div className="flex items-center justify-center gap-4 px-3 py-1.5 text-sm sm:text-base  hover:text-white transition mb-4">
-    <button
-      onClick={() => {
-        const novaSemana = semanaAtual + 1;
-        setSemanaAtual(novaSemana);
-        buscarHistorico(novaSemana);
-      }}
-      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base  text-primary rounded hover:bg-secondary border border-primary transition"
-    >
-      <ArrowRight size={24} />
-      Semana mais recente
-    </button>
-    <button
+
+  <button
       onClick={() => {
         const novaSemana = semanaAtual - 1;
         setSemanaAtual(novaSemana);
@@ -172,6 +162,19 @@ export default function HistoricoSemanal() {
       <ArrowLeft size={24} />
       Semana anterior
     </button>
+    
+    <button
+      onClick={() => {
+        const novaSemana = semanaAtual + 1;
+        setSemanaAtual(novaSemana);
+        buscarHistorico(novaSemana);
+      }}
+      className="w-60 flex items-center justify-center gap-1 px-3 py-1.5 text-sm sm:text-base  text-primary rounded hover:bg-secondary border border-primary transition"
+    >
+      <ArrowRight size={24} />
+      Mais recente
+    </button>
+ 
   </div>
   {/* </div> */}
 
