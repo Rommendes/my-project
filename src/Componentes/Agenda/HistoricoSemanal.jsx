@@ -9,6 +9,7 @@ import { getDiaSemanaComData } from "../Utilitarios/getDiaSemanaComData";
 import { formatarValor } from "../Utilitarios/formatarValor";
 import BotaoSair from "../BotaoSair";
 import BtnHome from "../BotaoHome/BtnHome";
+import { Link } from "react-router-dom";
 
 export default function HistoricoSemanal() {
   const [mesSelecionado, setMesSelecionado] = useState("");
@@ -137,6 +138,7 @@ export default function HistoricoSemanal() {
       <header className="bg-primary text-white py-4 px-6 flex justify-between items-center mb-6 rounded-lg">
         <h2 className="text-xl font-bold">Histórico semanal</h2>
         <div className="flex gap-5">
+          <Link to= "/agenda "> Ir para Agenda</Link>
           <BtnHome />
           <BotaoSair />
         </div>
