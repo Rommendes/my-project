@@ -2,8 +2,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../../supabaseClient";
 import { useNavigate } from "react-router-dom";
-import BtnHome from "../BotaoHome/BtnHome";
-import BotaoSair from "../BotaoSair";
+import Header from "../Header/Header";
 
 const PesquisandoClientes = () => {
   const [clientes, setClientes] = useState([]);
@@ -55,29 +54,19 @@ const PesquisandoClientes = () => {
     <>
     <style>{`
       body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-      
         display: flex;
         justify-content: center;
         align-items: center;
       }
     `}</style>
     
-    <div className="space-y-4 px-5 min-w-md max-w-full bg-gray-50">
+    <div className="container mx-auto p-4">
   {/* Container Principal */}
-  <div className="container mx-auto p-4 translate-y-[-150px]">
+  
     
     {/* Cabeçalho */}
-    <header className="bg-primary text-white py-4 px-6 pb-5 flex justify-between items-center mb-10">
-      <h1 className="text-xl font-bold">Busca de Clientes</h1>
-      <div className="flex gap-2">
-        <BtnHome />
-        <BotaoSair/>
-      </div>
-    </header>
-
+    <Header/>
+    
     {/* Caixa de Pesquisa */}
     <div className="border-2 border-border-ligth rounded-lg shadow-lg p-20 bg-gray-50">
     <div className=" w-full max-w-[100%] mx-auto   ">
@@ -157,7 +146,9 @@ const PesquisandoClientes = () => {
       )}
     </div>
     </div>
-  </div>
+  
+
+
 </div>
 
     </>

@@ -2,7 +2,7 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import * as XLSX from "xlsx";
 
-import { ArrowLeft, ArrowRight, FileDown, FileText } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarCog, FileDown, FileText } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabaseClient";
 import { getDiaSemanaComData } from "../Utilitarios/getDiaSemanaComData";
@@ -135,10 +135,17 @@ export default function HistoricoSemanal() {
 
   return (
     <div className="container mx-auto p-4">
-      <header className="bg-primary text-white py-4 px-6 flex justify-between items-center mb-6 rounded-lg">
+      <header className="bg-primary text-white py-4 px-6 flex justify-between items-center mb-6 rounded-lg ">
         <h2 className="text-xl font-bold">Histórico semanal</h2>
         <div className="flex gap-5">
-          <Link to= "/agenda "> Ir para Agenda</Link>
+
+          <Link 
+          to= "/agenda " 
+          className=" border w-fit px-1 py-1 flex gap-2 rounded" > 
+          <span className="hidden sm:inline "> Ir para Agenda</span>
+          <CalendarCog size={24}/>
+
+          </Link>
           <BtnHome />
           <BotaoSair />
         </div>

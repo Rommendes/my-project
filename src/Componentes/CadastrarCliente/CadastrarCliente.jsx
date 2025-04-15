@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { supabase } from "../../supabaseClient"; // Importe seu Supabase
 import EnderecoForm from "../EnderecoForm";
-import BtnHome from "../BotaoHome/BtnHome";
-import BotaoSair from "../BotaoSair";
+
+import Header from "../Header/Header";
 
 const CadastrarCliente = () => {
   const [formData, setFormData] = useState({
@@ -117,9 +117,7 @@ const CadastrarCliente = () => {
     <>
      <style>{`
       body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
+        
       
         display: flex;
         justify-content: center;
@@ -127,13 +125,10 @@ const CadastrarCliente = () => {
       }
     `}</style>
       
-    <div className=" items-center justify-center min-h-screen  px-4  ">
-    <div className="container mx-auto mt-5 flex justify-center gap-10">
-      <BtnHome/>
-      <BotaoSair/>
-    </div>
+    <div className=" mt-4 ">
+    <Header/>
 
-      <div className="bg-white sm:p-8 w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl  my-7 p-6 shadow-2xl rounded-lg">
+      <div className="bg-white sm:p-8 w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl  shadow-2xl rounded-lg">
         <div> 
 
         <div className="flex-wrap">

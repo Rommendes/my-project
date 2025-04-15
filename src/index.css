@@ -24,6 +24,6 @@
     @apply bg-secondary hover:bg-alternativo;
   }
   body {
-    @apply bg-blue-50 ; /*bg-pink-50 ou bg-gray-200, bg-pink-50, etc */
+    @apply bg-blue-50 ; 
   }
 }
