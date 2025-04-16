@@ -66,7 +66,7 @@ const HistoricoDoCliente = ({ clienteId }) => {
   
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 overflow-x-auto" >
   <h3 className="text-xl font-bold mb-2">Histórico de Agendamentos</h3>
   {agendamentos.length > 0 ? (
     <>
