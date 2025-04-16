@@ -67,7 +67,7 @@ const HistoricoDoCliente = ({ clienteId }) => {
 
   return (
     <div className="mt-10 overflow-x-auto" >
-  <h3 className="text-xl font-bold mb-2">Histórico de Agendamentos</h3>
+  <h3 className="text-xl font-bold mb-2 text-primary">Histórico de Agendamentos</h3>
   {agendamentos.length > 0 ? (
     <>
       <table className="w-full border bg-white shadow rounded overflow-x-auto">

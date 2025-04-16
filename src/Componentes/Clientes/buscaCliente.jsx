@@ -77,7 +77,7 @@ const PesquisandoClientes = () => {
         {resultados.length > 0 ? (
           resultados.map((cliente) => (
             <div key={cliente.id} className="mb-12">
-              <h3 className="text-xl font-bold mb-2">Dados do Cliente</h3>
+              <h3 className="text-xl font-bold mb-2 text-primary">Dados do Cliente</h3>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse bg-white mb-4">
                   <thead>
