@@ -21,6 +21,9 @@ export default {
         azulzinho: "#b2bffd",
         cinzinha: "#dfc8f8",
         borderLigth: "rgba(128, 128, 128, 0.3)",
+        roxinho: "#EAB8FF",
+        roxinhoClaro: "#EAB8FF",
+        inputs:"#e0e5fd"
       },
       backgroundImage: {
         "gradient-custom": "linear-gradient(to bottom right, #9333EA,#9333EA, #FFFF19, #2F3136)",

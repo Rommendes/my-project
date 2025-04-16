@@ -61,7 +61,7 @@ const PesquisandoClientes = () => {
             <input
               type="text"
               placeholder="Pesquisar cliente..."
-              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-400 rounded-lg bg-violet-200 focus:ring-2 focus:ring-roxinho focus:outline-none"
+              className="input-padrao"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
