@@ -29,7 +29,7 @@ function App() {
       <Route path="/cadastrar-cliente" element= { <CadastrarCliente/> }/>
       <Route path="/lista-clientes" element={ <ListaClientes/> } />
     
-      <Route path="/editar-cliente/:id" element={ <EditarCliente/> }/>
+      <Route path="/editar-cliente" element={ <EditarCliente/> }/>
       <Route path="/agenda" element= { <Agenda/> }/>
       <Route path="/historico-semanal" element= { <HistoricoSemanal/> }/>
       

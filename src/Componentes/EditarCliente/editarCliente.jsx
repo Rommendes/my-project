@@ -8,7 +8,19 @@ const EditarCliente = () => {
     const navigate = useNavigate();
 
   // Estado inicial corrigido para evitar inputs descontrolados
-  const [cliente, setCliente] = useState(null); 
+ // const [cliente, setCliente] = useState(null); 
+ const [cliente, setCliente] = useState({
+  nome: "",
+  data_aniversario: "",
+  telefone: "",
+  rua: "",
+  numero: "",
+  complemento: "",
+  bairro: "",
+  cidade: "",
+  cep: "",
+});
+
 
   useEffect(() => {
     const fetchCliente = async () => {
@@ -25,7 +37,17 @@ const EditarCliente = () => {
         alert("Erro ao carregar dados do cliente.");
       } else {
         console.log("Dados do cliente carregados:", data);
-        setCliente(data); // ✅ Atualiza o estado corretamente
+        setCliente({
+          nome: data.nome || "",
+          data_aniversario: data.data_aniversario || "",
+          telefone: data.telefone || "",
+          rua: data.rua || "",
+          numero: data.numero || "",
+          complemento: data.complemento || "",
+          bairro: data.bairro || "",
+          cidade: data.cidade || "",
+          cep: data.cep || "",
+        })
       }
     };
   
@@ -48,12 +70,7 @@ const EditarCliente = () => {
 
     const { data, error } = await supabase
       .from("clientes")
-      .update({
-        nome: cliente.nome,
-        data_aniversario: cliente.dataAniversario,
-        telefone: cliente.telefone,
-        rua: cliente.rua,
-      })
+      .update(cliente)
       .eq("id", id)
       .select(); // ✅ Garante que os dados atualizados sejam retornados
 
@@ -138,7 +155,7 @@ const EditarCliente = () => {
             value={cliente.complemento}
             onChange={(e) => setCliente({ ...cliente, complemento: e.target.value })}
             className="block w-full p-2 border rounded mt-1"
-            required
+            
           />
         </label>
 

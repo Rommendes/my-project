@@ -103,24 +103,24 @@ const HistoricoDoCliente = ({ clienteId }) => {
       </table>
 
       {/* Resumo por Forma de Pagamento */}
-      
       <div className="mt-6 border rounded-lg p-4 bg-white shadow">
-        <table className="w-1/4 ">
-      <h2 className="text-lg font-semibold mb-2 text-primary">Resumo da Conta</h2>
+      <h2 className="text-lg font-semibold mb-2 text-secondary uppercase">Resumo da Conta</h2>
+
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          
           <span className="font-medium text-primary">Total Pago:</span>
           <span className="text-green-600 font-semibold">
             R$ {totalPago.toFixed(2).replace('.', ',')}
           </span>
         </div>
+
         <div className="flex justify-between">
           <span className="font-medium text-primary">Total Pendente:</span>
           <span className="text-red-600 font-semibold">
             R$ {totalPendente.toFixed(2).replace('.', ',')}
           </span>
         </div>
+
         <div className="flex justify-between border-t border-t-primary pt-2 mt-2">
           <span className="font-bold text-primary">Total:</span>
           <span className="font-bold">
@@ -128,9 +128,9 @@ const HistoricoDoCliente = ({ clienteId }) => {
           </span>
         </div>
       </div>
-      </table>
     </div>
 
+ 
     </>
   ) : (
     <p className="mt-4 text-center text-gray-500">Nenhum agendamento encontrado.</p>
