@@ -47,7 +47,7 @@ export default function Home() {
                 to="/agenda"
                 className="botao-submenu-cor block w-full  text-white px-4 py-2 rounded-lg  text-center"
               >
-                Ver Agenda
+                Agendamento de Atendimentos
               </Link>
               <button
                 onClick={() => navigate("/historico-semanal")}
@@ -71,7 +71,7 @@ export default function Home() {
         <Link to="/historico-cliente" className="botao-menu w-full">
           <span className="material-icons text-secondary text-4xl">history</span>
           <div>
-            <h2 className="font-bold text-lg">Histórico Cliente</h2>
+            <h2 className="font-bold text-lg">Histórico do Cliente</h2>
             <p className="text-sm">Busca por cliente cadastrado</p>
           </div>
         </Link>

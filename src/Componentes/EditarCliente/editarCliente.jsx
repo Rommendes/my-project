@@ -120,6 +120,62 @@ const EditarCliente = () => {
           />
         </label>
 
+        <label className="block">
+          Nº:
+          <input
+            type="text"
+            value={cliente.numero}
+            onChange={(e) => setCliente({ ...cliente, numero: e.target.value })}
+            className="block w-full p-2 border rounded mt-1"
+            required
+          />
+        </label>
+
+        <label className="block">
+          Complemento:
+          <input
+            type="text"
+            value={cliente.complemento}
+            onChange={(e) => setCliente({ ...cliente, complemento: e.target.value })}
+            className="block w-full p-2 border rounded mt-1"
+            required
+          />
+        </label>
+
+        <label className="block">
+          Bairro:
+          <input
+            type="text"
+            value={cliente.bairro}
+            onChange={(e) => setCliente({ ...cliente, bairro: e.target.value })}
+            className="block w-full p-2 border rounded mt-1"
+            required
+          />
+        </label>
+
+        <label className="block">
+          Cidade:
+          <input
+            type="text"
+            value={cliente.cidade}
+            onChange={(e) => setCliente({ ...cliente, cidade: e.target.value })}
+            className="block w-full p-2 border rounded mt-1"
+            required
+          />
+        </label>
+
+        <label className="block">
+          CEP:
+          <input
+            type="text"
+            value={cliente.cep}
+            onChange={(e) => setCliente({ ...cliente, cep: e.target.value })}
+            className="block w-full p-2 border rounded mt-1"
+            required
+          />
+        </label>
+
+
         <div className="flex justify-between">
           <button type="submit" className="bg-green-500 text-white py-2 px-4 rounded">
             Salvar Alterações

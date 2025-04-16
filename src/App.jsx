@@ -9,8 +9,9 @@ import CadastrarCliente from "./Componentes/CadastrarCliente/CadastrarCliente";
 import ListaClientes from "./Componentes/ListaClientes/ListaClientes.jsx"
 import EditarCliente from "./Componentes/EditarCliente/editarCliente.jsx"
 import Agenda from "./Componentes/Agenda/Agenda.jsx"
-import BuscaCliente from "./Componentes/BuscaCliente/buscaCliente.jsx"
+import BuscaCliente from "./Componentes/Clientes/buscaCliente.jsx"
 import HistoricoSemanal from "./Componentes/Agenda/HistoricoSemanal.jsx"
+
 
 
 
@@ -22,7 +23,7 @@ function App() {
 
    <div>
     <Routes >
-      <Route path="/"element= { <Login setIsAuthenticated={setIsAuthenticated}/> }/>;
+      <Route path="/"element= { <Login setIsAuthenticated={setIsAuthenticated}/> }/>
       <Route path="/busca-cliente" element={<BuscaCliente />} />
       <Route path="/home" element = { <Home/> }/>
       <Route path="/cadastrar-cliente" element= { <CadastrarCliente/> }/>
