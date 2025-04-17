@@ -10,6 +10,7 @@ import { formatarValor } from "../Utilitarios/formatarValor";
 import BotaoSair from "../BotaoSair";
 import BtnHome from "../BotaoHome/BtnHome";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
 
 export default function HistoricoSemanal() {
   const [mesSelecionado, setMesSelecionado] = useState("");
@@ -133,31 +134,29 @@ export default function HistoricoSemanal() {
     XLSX.writeFile(wb, "historico-semanal.xlsx");
   };
 
+
+const Botao =(
+  <Link 
+  to= "/agenda " 
+  className=" border w-fit px-1 py-1 flex gap-2 rounded" > 
+  <span className="hidden sm:inline "> Ir para Agenda</span>
+  <CalendarCog size={24}/>
+
+  </Link>
+)
+  
+
   return (
     <div className="container mx-auto p-4">
-      <header className="bg-primary text-white py-4 px-6 flex justify-between items-center mb-6 rounded-lg ">
-        <h2 className="text-xl font-bold">Histórico semanal</h2>
-        <div className="flex gap-5">
-
-          <Link 
-          to= "/agenda " 
-          className=" border w-fit px-1 py-1 flex gap-2 rounded" > 
-          <span className="hidden sm:inline "> Ir para Agenda</span>
-          <CalendarCog size={24}/>
-
-          </Link>
-          <BtnHome />
-          <BotaoSair />
-        </div>
-      </header>
+      <Header title="Histórico Semanal de Agendamentos" 
+      actionButton={Botao}
+      
+      />
      
      
   {/* Coluna esquerda - PDF e Excel */}
     
 
-
-  {/* Coluna direita - Semana mais recente e anterior */}
-  {/* <div className="grid grid-cols-2 gap-y-2 sm:flex sm:justify-between sm:items-center sm:gap-4 w-full mb-4"> */}
   <div className="flex items-center justify-center gap-4 px-3 py-1.5 text-sm sm:text-base  hover:text-white transition mb-4">
 
   <button
@@ -197,13 +196,13 @@ export default function HistoricoSemanal() {
             <h2 className="text-lg font-semibold text-primary mb-2">- {getDiaSemanaComData(dia)} -</h2>
             <div className="overflow-x-auto border">
               <table className="w-full border border-gray-300 shadow rounded overflow-hidden">
-                <thead className="border bg-violet-200 text-sm uppercase font-bold">
+                <thead className="border bg-azulzinho text-sm uppercase font-bold">
                   <tr>
-                    <th className="border border-gray-300 px-4 py-2">Data</th>
-                    <th className="border border-gray-300 px-4 py-2">Cliente</th>
-                    <th className="border border-gray-300 px-4 py-2">Serviço</th>
-                    <th className="border border-gray-300 px-4 py-2">Valor</th>
-                    <th className="border border-gray-300 px-4 py-2">Pagamento</th>
+                    <th className="border border-gray-300 px-4 py-2 text-primary">Data</th>
+                    <th className="border border-gray-300 px-4 py-2 text-primary">Cliente</th>
+                    <th className="border border-gray-300 px-4 py-2 text-primary">Serviço</th>
+                    <th className="border border-gray-300 px-4 py-2 text-primary">Valor</th>
+                    <th className="border border-gray-300 px-4 py-2 text-primary">Pagamento</th>
                   </tr>
                 </thead>
                 <tbody>

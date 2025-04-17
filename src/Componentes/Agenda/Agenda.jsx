@@ -174,6 +174,9 @@ const AgendaAtendimento = () => {
     return acc;
   }, {});
 
+
+
+  
   return (
     <div className="container mx-auto p-4">
 
@@ -181,8 +184,6 @@ const AgendaAtendimento = () => {
       <div className="container mx-auto p-4">
 
     <Header/>
-
-
 
 {/* 🟡 FORMULÁRIO DE NOVO AGENDAMENTO */}
 
@@ -201,7 +202,7 @@ const AgendaAtendimento = () => {
 <InputData
 value={novoAgendamento.data}
 onChange={(val) => setNovoAgendamento({ ...novoAgendamento, data: val })}
-className="w-full border px-3 py-2 rounded bg-white text-gray-600 text-sm"
+
 />
 
 </div>
@@ -224,7 +225,7 @@ className="w-full border px-3 py-2 rounded bg-white text-gray-600 text-sm"
 <select
 value={novoAgendamento.cliente_id}
 onChange={(e) => setNovoAgendamento({ ...novoAgendamento, cliente_id: e.target.value })}
-className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
+className="input-padrao"
 >
 <option value="">Selecione um cliente</option>
 {clientes.map((cliente) => (
@@ -242,7 +243,7 @@ className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
 <select
 value={novoAgendamento.servico}
 onChange={(e) => setNovoAgendamento({ ...novoAgendamento, servico: e.target.value })}
-className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
+className="input-padrao"
 >
   <option value="">Selecione</option>
 <option value="tintura">Tintura</option>
@@ -264,7 +265,7 @@ type="text"
 placeholder="Valor"
 value={novoAgendamento.valor}
 onChange={(e) => setNovoAgendamento({ ...novoAgendamento, valor: e.target.value })}
-className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
+className="input-padrao"
 />
 </div>
 {/* Pagamento */}
@@ -273,7 +274,7 @@ className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
 <select
 value={novoAgendamento.pagamento}
 onChange={(e) => setNovoAgendamento({ ...novoAgendamento, pagamento: e.target.value })}
-className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
+className="input-padrao"
 >
 <option value="" >Selecione</option>
 <option value="Dinheiro">Dinheiro</option>
@@ -293,7 +294,7 @@ type="text"
 placeholder="Observações"
 value={novoAgendamento.obs}
 onChange={(e) => setNovoAgendamento({ ...novoAgendamento, obs: e.target.value })}
-className="w-full h-10 border px-3 rounded bg-white text-gray-600 text-sm"
+className="input-padrao resize-none h-[38px]"
 />
 </div>
 

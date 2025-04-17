@@ -124,9 +124,9 @@ const CadastrarCliente = () => {
         align-items: center;
       }
     `}</style>
-      
+   
     <div className=" mt-4 ">
-    <Header/>
+    <Header title="Cadastro de Cliente"/>
 
       <div className="bg-white sm:p-8 w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl  shadow-2xl rounded-lg">
         <div> 
@@ -134,7 +134,7 @@ const CadastrarCliente = () => {
         <div className="flex-wrap">
          
         <div className=" p-4 rounded ">
-          <h2 className="text-2xl font-bold  text-center text-primary">Cadastro de Cliente</h2>
+          <h2 className="text-lg   text-center text-primary">Preencha os Campos Obrigatórios* e opcionais</h2>
       </div>
       </div>
 
@@ -149,7 +149,7 @@ const CadastrarCliente = () => {
                 name="nome"
                 value={formData.nome}
                 onChange={handleChange}
-                className={`w-full p-2 border ${errors.nome ? "border-red-500" : "border-gray-300"} rounded-lg focus:ring-2 focus:ring-cinzinha focus:outline-none focus:border-b-primary`}
+                className={` ${errors.nome ? "border-red-500" : "border-gray-300"} input-padrao`}
               />
               {errors.nome && <p className="text-red-500 text-sm">{errors.nome}</p>}
             </div>
@@ -165,7 +165,7 @@ const CadastrarCliente = () => {
                 value={formData.telefone}
                 onChange={handleChange}
                 placeholder="(99) 99999-9999"
-                className={`w-full p-2 border ${errors.telefone ? "border-red-500" : "border-gray-300"} rounded-lg focus:ring-2 focus:ring-cinzinha focus:outline-none focus:border-b-primary`}
+                className={`input-padrao ${errors.telefone ? "border-red-500" : "border-gray-300"} `}
               />
               {errors.telefone && <p className="text-red-500 text-sm">{errors.telefone}</p>}
             </div>
@@ -178,7 +178,7 @@ const CadastrarCliente = () => {
                 name="dataAniversario"
                 value={formData.dataAniversario}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cinzinha focus:outline-none focus:border-b-primary"
+                className="input-padrao"
               />
             </div>
 
@@ -190,7 +190,7 @@ const CadastrarCliente = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cinzinha focus:outline-none focus:border-b-primary"
+                className="input-padrao"
               />
             </div>
 
@@ -200,7 +200,8 @@ const CadastrarCliente = () => {
             {/* Botão de cadastrar */}
             <button
               type="submit"
-              className="w-full bg-primary text-white p-3 rounded-lg hover:bg-alternativo transition-all"
+              className="w-fit bg-primary text-white p-3 rounded-lg hover:bg-secondary transition-all ml-40 
+               justify-center"
               disabled={loading}
             >
               {loading ? "Cadastrando..." : "Cadastrar"}
@@ -208,9 +209,11 @@ const CadastrarCliente = () => {
 
            
           </form>
+          
         </div>
       </div>
     </div>
+    
     </>
   );
 };

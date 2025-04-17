@@ -39,7 +39,7 @@ const Login = () => {
         body {
           
           min-height: 100vh;
-          background: linear-gradient(to right, #3b82f6, #ec4899);
+          
           align-items: center;
         }
       `}</style>

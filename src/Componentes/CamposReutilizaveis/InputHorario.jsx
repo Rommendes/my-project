@@ -18,7 +18,7 @@ export default function InputHorario({ value, onChange }) {
       placeholder="hh:mm"
       value={formatarHorario(value)}
       onChange={handleChange}
-      className="w-full border px-3 py-2 rounded bg-white text-gray-600 text-sm"
+      className="input-padrao py-[0.5] px-2 text-left  "
     />
   );
 }

@@ -50,7 +50,7 @@ const PesquisandoClientes = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <Header />
+      <Header title="Histórico do Cliente Cadastrado" />
       <div className="border-2 rounded-lg shadow-lg p-10 bg-gray-50 mt-6">
         <h2 className="text-2xl font-bold text-center mb-6 text-cinza">
           Pesquise um cliente para visualizar os dados
@@ -61,7 +61,7 @@ const PesquisandoClientes = () => {
             <input
               type="text"
               placeholder="Pesquisar cliente..."
-              className="input-padrao"
+              className="input-padrao py-4"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />

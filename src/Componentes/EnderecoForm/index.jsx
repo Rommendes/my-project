@@ -15,67 +15,67 @@ const EnderecoForm = ({formData, handleChange  }) => {
   
     <div className="grid grid-cols-2 gap-4">
       <div>
-        <label className="block">Rua:</label>
+        <label className="block px-2">Rua:</label>
         <input
           type="text"
           name="rua"
           value={formData.rua}
           onChange={handleChange  }
           placeholder="Nome da Rua"
-          className="w-full p-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-cinzinha focus:outline-none focus:border-b-primary"
-        />
+          className="input-padrao"
+           />
       </div>
   
       <div>
-        <label className="block">Número:</label>
+        <label className="block px-2">Número:</label>
         <input
           type="text"
           name="numero"
           value={formData.numero }
           onChange={handleChange }
           placeholder="Número"
-          className="w-full p-2 border rounded-lg border-gray-400  focus:ring-2 focus:ring-cinzinha focus:outline-none focus:border-b-primary"
+          className="input-padrao"
         />
       </div>
   
       <div>
-        <label className="block">Complemento:</label>
+        <label className="block px-2">Complemento:</label>
         <input
           type="text"
           name="complemento"
           value={formData.complemento}
           onChange={handleChange }
           placeholder="Apartamento, Bloco, etc."
-          className="w-full p-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-cinzinha focus:outline-none focus:border-b-primary"
+          className="input-padrao"
         />
       </div>
   
       <div>
-        <label className="block">Bairro:</label>
+        <label className="block px-2">Bairro:</label>
         <input
           type="text"
           name="bairro"
           value={formData.bairro }
           onChange={handleChange }
           placeholder="Bairro"
-          className="w-full p-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-cinzinha focus:outline-none focus:border-b-primary"
+          className="input-padrao"
         />
       </div>
   
       <div>
-        <label className="block">Cidade:</label>
+        <label className="block px-2">Cidade:</label>
         <input
           type="text"
           name="cidade"
           value={formData.cidade }
           onChange={handleChange }
           placeholder="Nome da Cidade"
-          className="w-full p-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none focus:border-b-primary"
+          className="input-padrao"
         />
       </div>
   
       <div>
-        <label className="block">CEP:</label>
+        <label className="block px-2">CEP:</label>
         <input
           type="text"
           name="cep"
@@ -83,7 +83,7 @@ const EnderecoForm = ({formData, handleChange  }) => {
           onChange={handleChange }
           placeholder="00000-000"
           maxLength={9}
-          className="w-full p-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none focus:border-b-primary"
+          className="input-padrao"
         />
       </div>
     </div>

@@ -19,7 +19,7 @@ export default function InputData({ value, onChange }) {
       placeholder="dd/mm/aaaa"
       value={formatarData(value)}
       onChange={handleChange}
-      className="w-full border px-3 py-2 rounded bg-white text-gray-600 text-sm"
+      className="input-padrao px-1 text-left"
     />
   );
 }

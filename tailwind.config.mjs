@@ -23,16 +23,16 @@ export default {
         borderLigth: "rgba(128, 128, 128, 0.3)",
         roxinho: "#EAB8FF",
         roxinhoClaro: "#EAB8FF",
-        inputs:"#e0e5fd"
+        inputs:"rgba(128, 128, 128, 0.3)"
       },
       backgroundImage: {
         "gradient-custom": "linear-gradient(to bottom right, #9333EA,#9333EA, #FFFF19, #2F3136)",
       },
     },
     fontFamily: {
+      Poppins,
       sans: ["Poppins", "sans-serif"],
-      serif: ["Merriweather", "serif"],
-      mono: ["Menlo", "monospace"],
+      
     },
   
   },
