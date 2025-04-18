@@ -28,12 +28,17 @@ export default {
       backgroundImage: {
         "gradient-custom": "linear-gradient(to bottom right, #9333EA,#9333EA, #FFFF19, #2F3136)",
       },
+      fontFamily: {
+        Poppins: ["Poppins", "sans-serif"],
+      },
+      screens: {
+        sm: "480px",
+        md: "768px",
+        lg: "976px",
+        xl: "1440px",
+      },
     },
-    fontFamily: {
-      Poppins,
-      sans: ["Poppins", "sans-serif"],
-      
-    },
+    
   
   },
   plugins: [],

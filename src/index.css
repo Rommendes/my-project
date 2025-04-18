@@ -25,6 +25,6 @@
     @apply bg-secondary hover:bg-alternativo;
   }
   body {
-    @apply bg-blue-50 font-sans; 
+    @apply bg-blue-50  font-Poppins; 
   }
 

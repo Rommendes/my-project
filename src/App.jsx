@@ -11,8 +11,7 @@ import EditarCliente from "./Componentes/EditarCliente/editarCliente.jsx"
 import Agenda from "./Componentes/Agenda/Agenda.jsx"
 import BuscaCliente from "./Componentes/Clientes/buscaCliente.jsx"
 import HistoricoSemanal from "./Componentes/Agenda/HistoricoSemanal.jsx"
-
-
+import EnviarCobrancasPendentes from "./Componentes/api/EnviarCobrancasPendentes.jsx"
 
 
 function App() {
@@ -32,7 +31,7 @@ function App() {
       <Route path="/editar-cliente" element={ <EditarCliente/> }/>
       <Route path="/agenda" element= { <Agenda/> }/>
       <Route path="/historico-semanal" element= { <HistoricoSemanal/> }/>
-      
+      <Route path="enviar-cobrancas" element= { <EnviarCobrancasPendentes/> }/>
   
     </Routes>
     </div>

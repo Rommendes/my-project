@@ -75,6 +75,14 @@ export default function Home() {
             <h2 className="font-bold text-lg">Lista de Clientes</h2>
             <p className="text-sm">Aqui encontra-se todos os clientes cadastrados</p>
           </div>
+
+        </Link>
+        <Link to="/enviar-cobrancas" className="botao-menu w-full">
+          <span className="material-icons text-secondary text-4xl">group</span>
+          <div>
+            <h2 className="font-bold text-lg">Enviar Cobranças</h2>
+            <p className="text-sm">Aqui encontra-se todos os clientes cadastrados</p>
+          </div>
         </Link>
 
         {/* Botão de sair */}
